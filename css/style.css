@@ -1,0 +1,81 @@
+.box {
+    background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(91,90,229,1) 15%, rgba(157,128,204,1) 35%, rgba(135,60,95,1) 72%, rgba(252,70,107,1) 100%);
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+
+body{
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.h1-set {
+    font-size: 4rem;
+    color: #833ab4;
+}
+.input-set{
+    width: 75%;
+    border: none;
+    border-radius: 10px;
+    padding: .3rem 1rem;
+    margin-top: 2rem;
+}
+
+.btn-set{
+    border: none;
+    border-radius: 10px;
+    height: 2rem;
+    aspect-ratio: 1/1;
+    background-color: rgb(110, 110, 226);
+    position: absolute;
+    right: 65px;
+    bottom: 1px;
+}
+
+.input-container{
+    position: relative;
+}
+
+.li-set{
+    max-width: 80%;
+    background-color: white;
+    margin: 0 auto .5rem;
+    list-style: none;
+    border-radius: 10px;
+    padding: .3rem 1rem;
+    position: relative;
+}
+
+ul{
+    padding-right: 2rem;
+}
+
+.trash-icon{
+    position: absolute;
+    right: -25px;
+    color: orangered;
+}
+
+.btn-set-trash{
+    border: none;
+    border-radius: 10px;
+    height: 2rem;
+    aspect-ratio: 1/1;
+    color: rgb(231, 71, 60);
+    background-color: transparent;
+    position: absolute;
+    right: 30px;
+    bottom: 1px;
+    font-size: 1.4rem;
+}
+
+.span-set{
+    cursor: pointer;
+}
+
+.completato{
+    text-decoration: line-through;
+}

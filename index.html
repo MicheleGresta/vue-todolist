@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="container text-center mt-5">
+            <h1 class="mb-5 h1-set">ToDo List</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="box">
+                        <div class="input-container mb-4">
+                            <input type="text" class="input-set" v-model="todoItem"
+                                placeholder="Inserisci qualcosa da fare" @keyup.enter=onClickBtn(todoItem.Id)>
+                            <button class="fas fa-plus btn-set" @click="onClickBtn"></button>
+                            <button class="fas fa-trash btn-set-trash" @click="onResetBtn"></button>
+                        </div>
+                        <ul class="ul-set">
+                            <li class="li-set d-flex justify-content-between" v-for="(todoItem, i) in todoList"><span>
+                                    {{todoList[i].id}} - 
+                                    <span :class="{'completato': todoItem.stato === 'completato'}">
+                                    {{todoList[i].nome}}</span></span>
+
+                                <span class="span-set" @click="onStatoBtn(todoItem.id)">{{letteraMaiusc(todoList[i].stato)}}</span>
+
+                                <a href="#" class="trash-icon" @click="onTrashBtn(todoItem.id)">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
