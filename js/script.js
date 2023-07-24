@@ -5,15 +5,15 @@ const app = Vue.createApp({
     data() {
         return {
             todoItem: "",
-            indice: 1,
+            indice: 2,
             todoList: [{
-                id: 0,
+                id: 1,
                 nome: "fare l'esercizio",
                 stato: "da fare"
             },
             {
-                id: 1,
-                nome: "biastimarci dietro",
+                id: 2,
+                nome: "correggere index",
                 stato: "work in progress"
             },
             ],
@@ -50,14 +50,13 @@ const app = Vue.createApp({
             this.indice= null
 
         },
-        onStatoBtn(todoId){
-            let cambiaStato = this.statoList.indexOf(this.todoList[todoId].stato);
+        onStatoBtn(todoItem){
+            let cambiaStato = this.statoList.indexOf(todoItem.stato);
             
             if(++cambiaStato > 2){
                 cambiaStato = 0;
             }
-            console.log(todoId);
-            this.todoList[(todoId)].stato = this.statoList[cambiaStato];    
+            todoItem.stato = this.statoList[cambiaStato];    
         },
         letteraMaiusc(str) {
             return str.charAt(0).toUpperCase() + str.slice(1);

@@ -33,7 +33,7 @@
                                     <span :class="{'completato': todoItem.stato === 'completato'}">
                                     {{todoList[i].nome}}</span></span>
 
-                                <span class="span-set" @click="onStatoBtn(todoItem.id)">{{letteraMaiusc(todoList[i].stato)}}</span>
+                                <span class="span-set" @click="onStatoBtn(todoItem)">{{letteraMaiusc(todoList[i].stato)}}</span>
 
                                 <a href="#" class="trash-icon" @click="onTrashBtn(todoItem.id)">
                                     <i class="fas fa-trash"></i>
